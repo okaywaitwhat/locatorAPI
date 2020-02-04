@@ -1,5 +1,5 @@
 const express = require("express");
-const { getHosts } = require("../controllers/hosts");
+const { getHosts, addHost } = require("../controllers/hosts");
 const router = express.Router();
 /*
 router.get("/", (req, res) => {
@@ -7,6 +7,9 @@ router.get("/", (req, res) => {
 });
 */
 
-router.route("/").get(getHosts);
+router
+  .route("/")
+  .get(getHosts)
+  .post(addHost);
 
 module.exports = router;
