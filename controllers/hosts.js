@@ -23,7 +23,6 @@ exports.getHosts = async (req, res, next) => {
 // @access Public
 exports.addHost = async (req, res, next) => {
   try {
-    //console.log(req.body);
     const host = await Host.create(req.body);
 
     return res.status(200).json({
